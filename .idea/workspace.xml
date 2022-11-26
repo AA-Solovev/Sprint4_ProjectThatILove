@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c54454dc-8567-45a6-9a0f-0a883e49de55" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PageObject/HomePageScooter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageobject/ScooterHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PageObject/OrderElements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageobject/OrderPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MyTests/ClickOnArrowAndCheckText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mytests/ClickOnArrowAndCheckText.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MyTests/OrderElementsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mytests/OrderPageTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,27 +52,27 @@
       <module name="Sprint4_ProjectThatILove" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="MyTests.*" />
+          <option name="PATTERN" value="mytests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="MyTests" />
-      <option name="MAIN_CLASS_NAME" value="MyTests.ClickOnArrowAndCheckText" />
+      <option name="MAIN_CLASS_NAME" value="mytests.ClickOnArrowAndCheckText" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderElementsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OrderPageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sprint4_ProjectThatILove" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="MyTests.*" />
+          <option name="PATTERN" value="mytests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="MyTests" />
-      <option name="MAIN_CLASS_NAME" value="MyTests.OrderElementsTest" />
+      <option name="PACKAGE_NAME" value="mytests" />
+      <option name="MAIN_CLASS_NAME" value="mytests.OrderPageTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -79,7 +81,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ClickOnArrowAndCheckText" />
-        <item itemvalue="JUnit.OrderElementsTest" />
+        <item itemvalue="JUnit.OrderPageTest" />
       </list>
     </recent_temporary>
   </component>

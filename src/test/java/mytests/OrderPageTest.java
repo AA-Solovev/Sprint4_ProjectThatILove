@@ -1,6 +1,6 @@
-package MyTests;
+package mytests;
 
-import PageObject.OrderElements;
+import pageobject.OrderPage;
 import org.hamcrest.MatcherAssert;
 import org.junit.After;
 import org.junit.Before;
@@ -10,14 +10,10 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import java.time.Duration;
-
 import static org.hamcrest.CoreMatchers.containsString;
 
-
-public class OrderElementsTest {
-
+public class OrderPageTest {
     private WebDriver driver;
 
     @Before
@@ -25,55 +21,50 @@ public class OrderElementsTest {
         driver = new ChromeDriver();
 //        driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-
     }
 
     @Test
-
     public void createOrder1() {
-
-
-
-        OrderElements objOrderElements = new OrderElements(driver);
-        objOrderElements.open();
-        objOrderElements.clickCookieButton();
+        OrderPage objOrderPage = new OrderPage(driver);
+        objOrderPage.open();
+        objOrderPage.clickCookieButton();
 // клик на кнопку "Заказать"-------------------------------
-        objOrderElements.clickTopOrderButton();
+        objOrderPage.clickTopOrderButton();
 // заполнение первой страницы заказа
-        objOrderElements.fillFirstPage(
+        objOrderPage.fillFirstPage(
                 "Олег",
                 "Ли",
                 "Светлая 15, 54",
                 "+79173232323");
 // заполнение второй страницы заказа
-        objOrderElements.fillSecondPage(
+        objOrderPage.fillSecondPage(
                 "Домофон не работает");
 // подтверждение оформления заказа
-        objOrderElements.clickYesButton();
-        String actualOrderText = objOrderElements.checkOrderIsDone();
+        objOrderPage.clickYesButton();
+        String actualOrderText = objOrderPage.checkOrderIsDone();
         String exceptedOrderText = "Заказ оформлен";
         MatcherAssert.assertThat(actualOrderText, containsString(exceptedOrderText));
     }
-    @Test
 
+    @Test
     public void createOrder2() {
-        OrderElements objOrderElements = new OrderElements(driver);
-        objOrderElements.open();
-        objOrderElements.clickCookieButton();
+        OrderPage objOrderPage = new OrderPage(driver);
+        objOrderPage.open();
+        objOrderPage.clickCookieButton();
 // Скролл вниз
         WebElement element = driver.findElement(By.id("accordion__heading-0"));
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", element);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
 // Оформление заказа через нижнюю кнопку --------------------------
-        objOrderElements.clickBottomOrderButton();
-        objOrderElements.fillFirstPage(
+        objOrderPage.clickBottomOrderButton();
+        objOrderPage.fillFirstPage(
                 "Олег",
                 "Ко",
                 "Темная 22, 5",
                 "+79171212312");
-        objOrderElements.fillSecondPage(
+        objOrderPage.fillSecondPage(
                 "Communication is disabled");
-        objOrderElements.clickYesButton();
-        String actualOrderText = objOrderElements.checkOrderIsDone();
+        objOrderPage.clickYesButton();
+        String actualOrderText = objOrderPage.checkOrderIsDone();
         String exceptedOrderText = "Заказ оформлен";
         MatcherAssert.assertThat(actualOrderText, containsString(exceptedOrderText));
     }
@@ -83,5 +74,4 @@ public class OrderElementsTest {
         // Закрытие браузера
         driver.quit();
     }
-
 }

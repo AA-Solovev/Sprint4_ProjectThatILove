@@ -1,12 +1,11 @@
-package PageObject;
+package pageobject;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class OrderElements {
+public class OrderPage {
     private WebDriver driver;
-
     private final String url = "https://qa-scooter.praktikum-services.ru/";
-
     // Кнопки "Заказать" (верхняя и нижняя кнопка)
     private By topOrderButton = By.className("Button_Button__ra12g");
     private By bottomOrderButton = By.className("Home_FinishButton__1_cWm");
@@ -49,16 +48,12 @@ public class OrderElements {
     // "Заказ оформлен"
     private By orderDoneHeader = By.xpath("//div[@class='Order_ModalHeader__3FDaJ']");
 
-
-
-
-
-    public OrderElements(WebDriver driver) {
+    public OrderPage(WebDriver driver) {
 
         this.driver = driver;
     }
 
-    public OrderElements open() {
+    public OrderPage open() {
         driver.get(url);
         return this;
     }
@@ -66,14 +61,17 @@ public class OrderElements {
     public String checkOrderIsDone() {
         return driver.findElement(orderDoneHeader).getText();
     }
+
     // Методы кликов на кнопки -----------------------------------------------
     public void clickCookieButton() {
         driver.findElement(cookieMessage).click();
     }
+
     // Метод клика на верхний "Заказ"
     public void clickTopOrderButton() {
         driver.findElement(topOrderButton).click();
     }
+
     // Метод клика на нижний "Заказ"
     public void clickBottomOrderButton() {
         driver.findElement(bottomOrderButton).click();
@@ -83,9 +81,11 @@ public class OrderElements {
     public void clickNextButton() {
         driver.findElement(orderNextButton).click();
     }
+
     public void clickZakazButton() {
         driver.findElement(orderZakazButton).click();
     }
+
     public void clickYesButton() {
         driver.findElement(orderYesButton).click();
     }
@@ -94,22 +94,27 @@ public class OrderElements {
     public void setFirstName(String firstName) {
         driver.findElement(orderFirstName).sendKeys(firstName);
     }
+
     // Ввод Фамилия
     public void setSecondName(String secondName) {
         driver.findElement(orderSecondName).sendKeys(secondName);
     }
+
     // Ввод адреса
     public void setAddressPoint(String addressPoint) {
         driver.findElement(orderAddressPoint).sendKeys(addressPoint);
     }
+
     // Метод клика на список станций метро
     public void clickMetroStation() {
         driver.findElement(orderMetroStation).click();
     }
+
     // Ввод станции метро
     public void clickMetroBulvar() {
         driver.findElement(orderMetroBulvar).click();
     }
+
     // Ввод номера телефона
     public void setOrderContactPhone(String contactPhone) {
         driver.findElement(orderContactPhone).sendKeys(contactPhone);
@@ -118,22 +123,26 @@ public class OrderElements {
     public void clickWhen() {
         driver.findElement(orderWhen).click();
     }
+
     public void clickWhenCalendar() {
         driver.findElement(orderWhenCalendar).click();
     }
+
     public void clickHowLong() {
         driver.findElement(orderHowLong).click();
     }
+
     public void clickHowLongTwoDays() {
         driver.findElement(orderHowLongTwoDays).click();
     }
+
     public void clickColorBlack() {
         driver.findElement(orderColorBlack).click();
     }
+
     public void setCommentCour(String commentCour) {
         driver.findElement(orderCommentCour).sendKeys(commentCour);
     }
-
 
     // Объединение методов
     public void fillFirstPage(String firstName, String secondName, String addressPoint, String contactPhone) {
@@ -145,6 +154,7 @@ public class OrderElements {
         clickMetroBulvar();
         clickNextButton();
     }
+
     public void fillSecondPage(String commentCour) {
         clickWhen();
         clickWhenCalendar();
@@ -154,5 +164,4 @@ public class OrderElements {
         setCommentCour(commentCour);
         clickZakazButton();
     }
-
 }

@@ -1,11 +1,11 @@
-package PageObject;
+package pageobject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class HomePageScooter {
+public class ScooterHomePage {
 
     private WebDriver driver;
 
@@ -39,12 +39,11 @@ public class HomePageScooter {
 
     private By accordionPanel_7 = By.id("accordion__panel-7");
 
-    public HomePageScooter(WebDriver driver) {
-
+    public ScooterHomePage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public HomePageScooter open() {
+    public ScooterHomePage open() {
         driver.get(url);
         return this;
     }
@@ -56,89 +55,68 @@ public class HomePageScooter {
     }
 
     //методы для нажатия на стрелочку
-    public void clickOnFirstButtonWithQuestion(){
-
+    public void clickOnFirstButtonWithQuestion() {
         driver.findElement(accordionButton_0).click();
-
     }
 
-
-    public void clickOnSecondButtonWithQuestion(){
-
+    public void clickOnSecondButtonWithQuestion() {
         driver.findElement(accordionButton_1).click();
-
     }
 
-    public void clickOnThirdButtonWithQuestion(){
-
+    public void clickOnThirdButtonWithQuestion() {
         driver.findElement(accordionButton_2).click();
-
     }
 
-    public void clickOnFourthButtonWithQuestion(){
-
+    public void clickOnFourthButtonWithQuestion() {
         driver.findElement(accordionButton_3).click();
-
     }
 
-    public void clickOnFivethButtonWithQuestion(){
-
+    public void clickOnFivethButtonWithQuestion() {
         driver.findElement(accordionButton_4).click();
-
     }
 
-    public void clickOnSixthButtonWithQuestion(){
-
+    public void clickOnSixthButtonWithQuestion() {
         driver.findElement(accordionButton_5).click();
-
     }
 
-    public void clickOnSeventhButtonWithQuestion(){
-
+    public void clickOnSeventhButtonWithQuestion() {
         driver.findElement(accordionButton_6).click();
-
     }
 
-    public void clickOnEighthButtonWithQuestion(){
-
+    public void clickOnEighthButtonWithQuestion() {
         driver.findElement(accordionButton_7).click();
-
     }
 
     //Методы для получения текста под кнопками
-    public String textPannelFirst(){
+    public String textPannelFirst() {
         return driver.findElement(By.id("accordion__panel-0")).getText();
-
     }
 
-    public String textPannelSecond(){
+    public String textPannelSecond() {
         return driver.findElement(By.id("accordion__panel-1")).getText();
     }
 
-    public String textPannelThird(){
+    public String textPannelThird() {
         return driver.findElement(By.id("accordion__panel-2")).getText();
     }
 
-    public String textPannelFourth(){
+    public String textPannelFourth() {
         return driver.findElement(By.id("accordion__panel-3")).getText();
     }
 
-    public String textPannelFiveth(){
+    public String textPannelFiveth() {
         return driver.findElement(By.id("accordion__panel-4")).getText();
     }
 
-    public String textPannelSixth(){
+    public String textPannelSixth() {
         return driver.findElement(By.id("accordion__panel-5")).getText();
     }
 
-    public String textPannelSeventh(){
+    public String textPannelSeventh() {
         return driver.findElement(By.id("accordion__panel-6")).getText();
     }
 
-    public String textPannelEighth(){
+    public String textPannelEighth() {
         return driver.findElement(By.id("accordion__panel-7")).getText();
     }
-
-
-
 }
