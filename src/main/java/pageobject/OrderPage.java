@@ -11,7 +11,6 @@ public class OrderPage {
     private By bottomOrderButton = By.className("Home_FinishButton__1_cWm");
     private By cookieMessage = By.className("App_CookieButton__3cvqF");
 
-
     // #1. Первая страница оформления заказа ---------------------------------------
     // Заголовок заказа "Для кого самокат"
     private By orderHeaderText = By.className("Order_Header__BZXOb");
